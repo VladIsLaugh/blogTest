@@ -1,0 +1,23 @@
+.NewsItem{
+    width:100%
+}
+.TextArea{
+    width:1000px;
+}
+.expand {
+    transform: rotate(0deg);
+    marginLeft: auto;
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  .expandOpen {
+    transform: rotate(180deg);
+  },
+  .avatar {
+    backgroundColor: red;
+  },
+  .textarea{
+    width: 100%;
+    height: 50px;
+  }
