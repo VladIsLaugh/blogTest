@@ -4,7 +4,15 @@ const Layout = (props) => {
   // console.log(props);
   return (
     <div>
-      <NewsPreviewItem personalInfo={props.personalInfo} />
+
+    {
+      props.personalInfo.map((item, index)=>{
+        return(
+          <NewsPreviewItem personalInfo={props.personalInfo[index]} key={index} handleOpen={props.handleOpen}/>
+        )
+      })
+    }
+      
     </div>
   );
 };

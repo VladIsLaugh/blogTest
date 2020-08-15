@@ -19,26 +19,25 @@ import { Button } from "@material-ui/core";
 
 
 export default function NewsPreviewItem(props) {
-  const editClickHandler = () => {
-    alert("edit")
+  const editClickHandler = (id) => {
+    
   }
-  const deleteClickHandler = () => {
-    alert("delete")
+  const deleteClickHandler = (id) => {
+     props.handleOpen(id)
   }
-  console.log(props.personalInfo.name);
   return (
     <Card>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" >
-            R
+           {props.personalInfo.avatar}
           </Avatar>
         }
         action={
           <div >
             {/* <MoreVertIcon /> */}
-            <Button variant="contained" color="primary" onClick = {editClickHandler}> edit </Button>
-            <Button variant="contained" color="secondary" onClick = {deleteClickHandler}> delete </Button>
+            <Button variant="contained" color="primary" onClick = { ()=>props.handleOpen(props.personalInfo.id, "edit") }> edit </Button>
+            <Button variant="contained" color="secondary" onClick = {()=>props.handleOpen(props.personalInfo.id, "delete")}> delete </Button>
 
              </div>
             // <Button> delete </Button>
@@ -46,12 +45,11 @@ export default function NewsPreviewItem(props) {
          
         }
         title={props.personalInfo.name}
-        subheader="September 14, 2016"
+        subheader={props.personalInfo.date}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {props.personalInfo.msg}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

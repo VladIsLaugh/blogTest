@@ -2,13 +2,12 @@ import React from "react";
 import {Input, Button } from "@material-ui/core";
 
 
-const AddComponent = () => {
+const AddComponent = (props) => {
   return (
     <div>
     Add New post
     <br />
-         <Input />
-      <Button>
+      <Button variant="contained" color="secondary" onClick = {()=>props.handleOpen(null, "create")}>
 +      </Button>
  
     </div>
