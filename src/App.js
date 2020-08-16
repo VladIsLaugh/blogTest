@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import Home from "./home/Home.js";
-import News from "./news/News";
-import Admin from "./admin/Admin";
+import Home from "./containers/home/Home.js";
+import News from "./containers/news/News";
+import Admin from "./containers/admin/Admin";
 import Layout from "./hoc/layout/Layout"
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { Switch, Route, NavLink } from "react-router-dom";

@@ -8,8 +8,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import ConfirmationModalWrapper from './../sharedComponents/ConfirmationModalWrapper'
-import EditibleModalWrapper from './../sharedComponents/EditibleModalWrapper'
+import ConfirmationModalWrapper from '../../components/sharedComponents/ConfirmationModalWrapper'
+import EditibleModalWrapper from '../../components/sharedComponents/EditibleModalWrapper'
 
 class Admin extends React.Component{
     state = {
