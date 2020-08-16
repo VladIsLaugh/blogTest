@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from "./NewsItem.module.css";
-import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -18,13 +17,23 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ChatIcon from '@material-ui/icons/Chat';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import NewsItemComment from './NewsItemComment/NewsItemComment'
+import SendIcon from '@material-ui/icons/Send';
+import Button from '@material-ui/core/Button';
 
-export default function NewsItem() {
+
+export default function NewsItem(props) {
   const [expanded, setExpanded] = React.useState(false);
+   let comment = React.createRef();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const send=()=>{
+    props.commentHandler(comment.current.value, props.id)
+    comment.current.value = ''
+  }
 
   return (
     <Card className={classes.NewsItem}>
@@ -35,13 +44,12 @@ export default function NewsItem() {
           </Avatar>
         }
 
-        title="Shrimp and Chorizo Paella"
+        title={props.title}
         subheader="September 14, 2016"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {props.body}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -64,11 +72,13 @@ export default function NewsItem() {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
 
-        <p>sdfaffdafa</p>
-        <p>sdfaffdafa</p>
-        <p>sdfaffdafa</p>
-
-        <TextareaAutosize placeholder="Empty" className={classes.textarea}/>
+{
+  props.state.comments.filter((item, index) => item.postId === props.id).map((item,index)=>   <NewsItemComment {...item} />)
+}
+        <textarea placeholder="Empty" className={classes.textarea} ref={comment} />
+        <Button onClick={() => send()}>  
+          <SendIcon /> 
+        </Button>
 
         </CardContent>
       </Collapse>

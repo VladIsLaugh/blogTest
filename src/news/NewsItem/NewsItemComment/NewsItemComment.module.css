@@ -1,0 +1,19 @@
+.Comment{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    border-bottom: 1px solid #000;
+}
+.Title{
+    
+}
+.Name{
+    font-size: 14px;
+    font-weight: 600;
+}
+.Email{
+    font-size:10px;
+}
+.Body{
+    font-size:12px;
+}
