@@ -5,10 +5,10 @@ import {Input, Button } from "@material-ui/core";
 const AddComponent = (props) => {
   return (
     <div>
-    Add New post
+    
     <br />
       <Button variant="contained" color="secondary" onClick = {()=>props.handleOpen(null, "create")}>
-+      </Button>
+      Add New post    </Button>
  
     </div>
   );

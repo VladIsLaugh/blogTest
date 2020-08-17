@@ -30,7 +30,7 @@ export default function NewsPreviewItem(props) {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" >
-           {props.personalInfo.avatar}
+           R
           </Avatar>
         }
         action={
@@ -44,17 +44,16 @@ export default function NewsPreviewItem(props) {
 
          
         }
-        title={props.personalInfo.name}
-        subheader={props.personalInfo.date}
+        title={props.personalInfo.title}
+        // subheader={props.personalInfo.date}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {props.personalInfo.msg}
+          {props.personalInfo.body}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
 
-        
       </CardActions>
      
     </Card>

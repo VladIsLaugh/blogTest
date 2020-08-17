@@ -1,11 +1,11 @@
 import React from 'react';
-
+import classes from "./Home.module.css";
 
 export default function Home() {
   
   return (
-    <div>
-     HomePage
+    <div className={classes.Home}>
+     Wellcome to my test task
     </div>
   );
 }
