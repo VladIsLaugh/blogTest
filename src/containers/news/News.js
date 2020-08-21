@@ -97,9 +97,6 @@ class News extends React.Component {
             >
               Sort by popular
             </Button>
-            <Button variant="contained" type="primary">
-              Sort by new
-            </Button>
             <Button
               variant="contained"
               type="primary"
@@ -110,6 +107,7 @@ class News extends React.Component {
 
             {this.state.news.map((item, index) => (
               <NewsItem
+              key={index}
                 state={this.state}
                 {...item}
                 commentHandler={this.commentHandler.bind(this)}
