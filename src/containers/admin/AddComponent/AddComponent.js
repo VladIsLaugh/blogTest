@@ -1,5 +1,5 @@
 import React from "react";
-import {Input, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 
 const AddComponent = (props) => {

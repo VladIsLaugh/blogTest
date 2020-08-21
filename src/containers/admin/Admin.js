@@ -2,19 +2,10 @@ import React from "react";
 import classes from "./Admin.module.css";
 import AddComponent from "./AddComponent/AddComponent";
 import NewsPreview from "./NewsPreview/NewsPreview";
-import Modal from "@material-ui/core/Modal";
-import Dialog from "@material-ui/core/Dialog";
-import Button from "@material-ui/core/Button";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import ConfirmationModalWrapper from "../../components/sharedComponents/ConfirmationModalWrapper";
-import EditibleModalWrapper from "../../components/sharedComponents/EditibleModalWrapper";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import axios from "axios";
@@ -59,7 +50,7 @@ class Admin extends React.Component {
     this.setState({
       isOpen: false,
       personalInfo: this.state.personalInfo.filter(
-        (item) => item.id != this.state.focusId
+        item => item.id !== this.state.focusId
       ),
     });
   };
@@ -127,8 +118,9 @@ class Admin extends React.Component {
         ) : (
           <>
             <AddComponent state={this.state} handleOpen={this.handleOpen} />
+            <span> Your news</span>
             <div className={(classes.AdminHeader, classes.select)}>
-              <span> Your news</span>
+
               <FormControl className={(classes.formControl, classes.select)}>
                 <InputLabel id="demo-simple-select-label">
                   Choose user
